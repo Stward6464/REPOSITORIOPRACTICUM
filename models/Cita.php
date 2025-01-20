@@ -1,6 +1,5 @@
 <?php
 include_once 'db.php';
-
 class Cita {
     private $conn;
     private $table_name = "citas";
@@ -26,7 +25,7 @@ class Cita {
         $stmt->bindParam(':medico_id', $medico_id);
         $stmt->bindParam(':fecha', $fecha);
     
-        return $stmt->execute(); // Devuelve true si la inserción fue exitosa
+        return $stmt->execute(); // Devuelve true si la inserción fue exitosa.
     }
     
     

@@ -6,7 +6,7 @@ class CitaController {
     private $model;
 
     public function __construct($db) {
-        $this->conn = $db; // Almacena la conexión en la propiedad
+        $this->conn = $db; // Almacena la conexión en la propiedad.
         $this->model = new Cita($db);
     }
 
@@ -24,7 +24,7 @@ class CitaController {
         if ($this->model->addCita($paciente_id, $medico_id, $fecha)) {
             // Redirige a la lista de citas
             header("Location: index.php?action=listCitas");
-            exit; // Asegúrate de detener la ejecución después de redirigir
+            exit; // Asegúrate de detener la ejecución después de redirigir.
         } else {
             // Mostrar mensaje de error y enlace al formulario
             echo "<p>Error al programar la cita. Inténtalo nuevamente.</p>";
@@ -37,8 +37,8 @@ class CitaController {
         include_once 'models/Paciente.php';
         include_once 'models/Medico.php';
 
-        $pacienteModel = new Paciente($this->conn); // Usa $this->conn para la conexión
-        $medicoModel = new Medico($this->conn); // Usa $this->conn para la conexión
+        $pacienteModel = new Paciente($this->conn); // Usa $this->conn para la conexión.
+        $medicoModel = new Medico($this->conn); // Usa $this->conn para la conexión.
 
         $pacientes = $pacienteModel->getPacientes();
         $medicos = $medicoModel->getMedicos();
